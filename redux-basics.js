@@ -17,9 +17,12 @@ const rootReducer = (state = initialState, action) => {
 
 //Store
 const store = redux.createStore(rootReducer);
-console.log(store.getState());
+// console.log(store.getState());
+
+//Subscription
+store.subscribe(() => console.log(store.getState()));
 
 //Action Dispatch
 store.dispatch({ type: 'INC_COUNTER' });
 store.dispatch({ type: 'ADD_COUNTER', value: 10 });
-console.log(store.getState());
+// console.log(store.getState());
